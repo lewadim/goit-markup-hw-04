@@ -41,8 +41,7 @@ body {
 
 .container {
   width: 1158px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -102,17 +101,18 @@ body {
   color: #404bbf;
 }
 
-.menu-item {
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
-
 .menu-link {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  padding: 24px 0;
+  display: block;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 .contact-list-link:hover,
@@ -131,13 +131,34 @@ body {
   letter-spacing: 0.02em;
   color: #434455;
 }
-
+.current-page::after {
+  color: #404bbf;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #404bbf;
+  width: 100%;
+}
 /* ============== /HEADER STYLES ============== */
 
 /* ============== SERVICE ORDER PAGE STYLES ============== */
 
 .service-order-page {
-  background-color: #2e2f42;
+  background: #2e2f42;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1440px;
+  margin: 0 auto;
   padding-top: 188px;
   padding-bottom: 188px;
 }
@@ -225,6 +246,17 @@ body {
   color: #434455;
 }
 
+.company-icon-benefits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 264px;
+  height: 112px;
+  border-radius: 4px;
+  border: 1px solid #8e8f99;
+  background: #f4f4fd;
+  margin-bottom: 8px;
+}
 /* ============== /COMPANY DESCRIPTION STYLES ============== */
 
 /* ============== WORKERS STYLES ============== */
@@ -285,6 +317,34 @@ body {
   color: #434455;
 }
 
+.social-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  gap: 24px;
+}
+
+.social-item {
+  width: 40px;
+  height: 40px;
+}
+
+.social-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250mc cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: #404bbf;
+}
 /* ============== WORKERS STYLES ============== */
 
 /* ============== PORTFOLIO STYLES ============== */
@@ -344,6 +404,33 @@ body {
   color: #434455;
 }
 
+.portfolio-img-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 32px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  background-color: #4d5ae5;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-list-item:hover .text-overlay {
+  transform: translateY(0%);
+}
+
 /* ============== PORTFOLIO STYLES ============== */
 
 /* ============== FOOTER STYLES ============== */
@@ -378,5 +465,49 @@ body {
   letter-spacing: 0.02em;
   color: #f4f4fd;
 }
+.footer-text-media {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+}
 
+.social-list-footer {
+  display: flex;
+  gap: 16px;
+}
+.page-footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.conteiner-logo-footer {
+  margin-right: 120px;
+}
+
+.footer-text-media {
+  margin-bottom: 16px;
+}
+.footer-social-item {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-social-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250mc cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: #31d0aa;
+}
 /* ============== /FOOTER STYLES ============== */
