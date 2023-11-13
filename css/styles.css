@@ -68,6 +68,7 @@ body {
 }
 
 .page-navigation {
+  color: #404bbf;
   display: flex;
   max-width: 785px;
   align-items: center;
@@ -200,6 +201,7 @@ body {
   letter-spacing: 0.04em;
   color: #ffffff;
   background-color: #4d5ae5;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ============== /SERVICE ORDER PAGE STYLES ============== */
